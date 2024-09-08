@@ -1,101 +1,115 @@
-import Image from "next/image";
+"use client";
+/* eslint-disable no-unused-vars */
+import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
+import Particles from "@/components/magicui/particles";
+import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
+import { cn } from "@/lib/utils";
+import { ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+// import { Card } from "@/components/ui/card";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const { theme } = useTheme();
+  const [color, setColor] = useState("#ffffff");
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  useEffect(() => {
+    setColor(theme === "dark" ? "#ffffff" : "#000000");
+  }, [theme]);
+  return (
+    <>
+      <section className="relative grid grid-rows-[1fr_20px_1fr] items-center justify-items-center min-h-50px p-8 pb-16 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] w-4/5 mx-auto">
+        <div className="pb-1" style={{ padding: "55px" }}>
+          <AnimatedGradientText>
+            🎉 <hr className="mx-2 h-4 w-[1px] shrink-0 bg-gray-300" />{" "}
+            <span
+              className={cn(
+                `inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
+              )}
+            >
+              Introducing Tenacity Learn
+            </span>
+            <ChevronRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+          </AnimatedGradientText>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+        <span
+          className="pointer-events-none whitespace-pre-wrap text-8xl font-semibold leading-none text-white font-normal text-center"
+          style={{ fontSize: "70px", fontWeight: "normal" }}
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          Turning <span style={{ color: "#005af0" }}>Passion</span> <br></br>{" "}
+          Into <span style={{ color: "#005af0" }}>Obsession</span>
+        </span>
+
+        <div className="flex flex-col justify-center items-center">
+          <div className="min-w-[500px] pb-5" style={{ width: "700px" }}>
+            <p
+              className="font-light leading-tight"
+              style={{
+                fontSize: "20px",
+                color: "#78909C",
+                textAlign: "center",
+              }}
+            >
+              Tenacity is a student driven community that{" "}
+            </p>
+            <p
+              className="font-light leading-tight"
+              style={{
+                fontSize: "20px",
+                color: "#78909C",
+                textAlign: "center",
+              }}
+            >
+              provides an inclusive and collaborative space to all
+            </p>
+          </div>
+          <Button className="items-center justify-center">
+            Join the Community
+          </Button>
+        </div>
+      </section>
+
+      <div className="flex justify-center items-center rounded-lg">
+        <div className="relative w-[1200px] h-[600px] rounded-lg overflow-hidden shadow-[0_4px_6px_rgba(0,0,0,0.1)]">
+          <div
+            className="absolute inset-0 border-2 rounded-lg"
+            style={{
+              borderImage: "linear-gradient(to bottom, #1E293B, #000000) 1",
+              borderRadius: "10px", // Ensure the border radius is applied
+            }}
+          ></div>
+          <div className="absolute inset-0 bg-black rounded-lg m-1"></div>
+        </div>
+      </div>
+
+      <section className="relative grid grid-rows-[1fr_20px_1fr] items-center justify-items-center min-h-50px p-8 pb-16 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] w-4/5 mx-auto">
+        <div className="min-w-[500px] pb-5" style={{ width: "700px" }}>
+          <p
+            className="font-light leading-tight"
+            style={{
+              fontSize: "20px",
+              color: "#78909C",
+              textAlign: "center",
+            }}
+          >
+            Tenacity is a student driven community that{" "}
+          </p>
+          <p
+            className="font-light leading-tight"
+            style={{
+              fontSize: "20px",
+              color: "#78909C",
+              textAlign: "center",
+            }}
+          >
+            provides an inclusive and collaborative space to all
+          </p>
+        </div>
+      </section>
+
+      <div className="absolute inset-0 -z-10">
+        <Particles quantity={500} ease={80} color={color} refresh />
+      </div>
+    </>
   );
 }
