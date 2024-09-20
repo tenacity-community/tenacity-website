@@ -10,20 +10,15 @@ import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import LogoCarousel from "@/components/ui/logocarousel";
 import React from "react";
-// import { css, jsx } from "@emotion/core";
-import Navigation from "react-sticky-nav";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-
-// import {
-//   HoveredLink,
-//   Menu,
-//   MenuItem,
-//   ProductItem,
-// } from "@/components/ui/navbar-menu";
-// import { FloatingNav } from "@/components/ui/floating-navbar";
-// import { NeonGradientCard } from "@/components/magicui/neon-gradient-card";
-// import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
-
+import { Card, CardHeader } from "@/components/ui/card";
+// import { AnimatePresence, motion } from "framer-motion";
+// import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
+// import favicon from "../app/favicon.ico"
+// import { Avatar } from "@/components/ui/avatar";
+// import CanvasRevealEffectDemo3 from "./DynamicCanvasRevealSeparate";
+import CanvasRevealEffectDemo2 from "./StaticCanvasRevealSeparate";
+import ShineBorder from "@/components/magicui/shine-border";
+import InfiniteMovingCardsDemo from "./testimonials";
 export default function Home() {
   const { theme } = useTheme();
   const [color, setColor] = useState("#ffffff");
@@ -85,18 +80,13 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="flex justify-center items-center rounded-lg w-[1500px]">
-        <div className="relative w-[1200px] h-[600px] rounded-lg overflow-visible shadow-[0_0px_100px_50px_rgba(0,90,240,0.5)] min-w-screen">
-          <div
-            className="absolute inset-0 border-2 rounded-lg"
-            style={{
-              borderImage: "linear-gradient(to bottom, #1E293B, #000000) 1",
-              borderImageSlice: 1,
-              borderRadius: "10px", // Ensure the border radius is applied
-            }}
-          ></div>
-          <div className="absolute inset-0 bg-black rounded-lg m-1"></div>
-        </div>
+      <div className="flex justify-center items-center min-h-screen">
+        <ShineBorder
+          className="flex justify-center items-center rounded-lg relative w-[1200px] h-[600px] rounded-lg overflow-visible shadow-[0_0px_100px_50px_rgba(0,90,240,0.5)] min-w-screen"
+          color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
+        >
+          Video
+        </ShineBorder>
       </div>
 
       <section className="relative grid grid-rows-[1fr_20px_1fr] items-center justify-items-center min-h-50px p-8 pb-8 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] w-4/5 mx-auto">
@@ -152,29 +142,382 @@ export default function Home() {
             <Card>
               <CardHeader style={{ padding: "0px" }}>
                 <img
-                  src="https://media.discordapp.net/attachments/847153213996400660/1282276740521267240/image.png?ex=66dec4c6&is=66dd7346&hm=348b9a3cac82bc316e443c21640abbe45cd6da89bb6193248777a29317e24f2c&=&format=webp&quality=lossless&width=1043&height=701"
+                  src="https://cdn.discordapp.com/attachments/847153213996400660/1282276740521267240/image.png?ex=66ee96c6&is=66ed4546&hm=d83bff8716a0c800d86281dc80606d7dc340d473de378b7835aecd3d61d9fea1&"
                   alt=""
                 />
               </CardHeader>
             </Card>
           </div>
         </div>
+
+        <div className="flex items-center justify-center">
+          <Button>Learn more</Button>
+        </div>
       </section>
 
-      {/* <div className="flex justify-center items-center rounded-lg">
-        <div className="relative w-[1200px] h-[600px] rounded-lg overflow-hidden shadow-[0_4px_6px_rgba(0,0,0,0.1)]">
-          <div
-            className="absolute inset-0 border-2 rounded-lg"
-            style={{
-              borderImage: "linear-gradient(to bottom, #1E293B, #000000) 1",
-              borderRadius: "10px", // Ensure the border radius is applied
-            }}
-          ></div>
-          <div className="absolute inset-0 bg-black rounded-lg m-1"></div>
-        </div>
-      </div> */}
+      <section className="relative grid grid-rows-[1fr_20px_1fr] items-center justify-items-center min-h-50px p-8 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] w-4/5 mx-auto">
+        <div id="reee" className="flex" style={{ paddingBottom: "200px" }}>
+          <span
+            className="pointer-events-none whitespace-pre-wrap text-8xl font-semibold leading-none text-white font-normal text-left"
+            style={{ fontSize: "75px", fontWeight: "normal" }}
+          >
+            <span style={{ color: "#005af0" }}>Everything</span> <br></br>
+            you need
+          </span>
+          <div className="p-20"></div>
+          <div className="p-5"></div>
+          <span>
+            <div className="pb-5"></div>
 
-      {/* <div id="navbar" className="relative  w-full"></div> */}
+            <p
+              className="font-light leading-tight "
+              style={{
+                fontSize: "20px",
+                color: "#78909C",
+                textAlign: "left",
+              }}
+            >
+              At Tenacity, we create an enriching and
+              <br /> valuable experience for all members. We are <br />
+              committed to helping our members succeed.
+            </p>
+          </span>
+        </div>
+
+        <div id="cards" className="flex">
+          <div style={{ width: "325px" }}>
+            <CanvasRevealEffectDemo2
+              text="Discover, learn, earn and mentor"
+              ikon="https://media.discordapp.net/attachments/847153213996400660/1282592894217355325/discover.png?ex=66dfeb37&is=66de99b7&hm=92546ced0e04aceb3473ba265a3644ea4e7f7e165927bff1ddaf122d95fa5e0a&=&format=webp&quality=lossless&width=147&height=162"
+            />
+          </div>
+          <div className="p-5"></div>
+          <div style={{ width: "325px" }}>
+            <CanvasRevealEffectDemo2
+              text="A community with a global presence"
+              ikon="https://media.discordapp.net/attachments/847153213996400660/1282592894435463208/global.png?ex=66dfeb37&is=66de99b7&hm=ca32107c9ab38ff4b1a46a83a9cca7519c9d1e6ab5bbc7c2a80da9a38e5be508&=&format=webp&quality=lossless&width=158&height=158"
+            />
+          </div>
+          <div className="p-5"></div>
+          <div style={{ width: "325px" }}>
+            <CanvasRevealEffectDemo2
+              text="Unlock your potential with Tenacity"
+              ikon="https://media.discordapp.net/attachments/847153213996400660/1282592893978022006/unloccpot.png?ex=66dfeb37&is=66de99b7&hm=81258f40a8f96586c5619d436727536c075fcd5c10f96c202c19dedfeac36113&=&format=webp&quality=lossless&width=130&height=160"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="everything is covered"
+        className="relative flex flex-col items-start justify-center min-h-50px p-8 pb-8 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] w-4/5 mx-auto"
+      >
+        <span
+          className="pointer-events-none whitespace-pre-wrap text-8xl font-semibold leading-none text-white font-normal"
+          style={{ fontSize: "75px", fontWeight: "normal" }}
+        >
+          <span style={{ color: "#005af0" }}>Everything</span> <br></br>
+          is covered
+          <p
+            className="font-light leading-tight "
+            style={{
+              fontSize: "20px",
+              color: "#78909C",
+              textAlign: "left",
+            }}
+          >
+            At Tenacity, you&apos;ll find everything you need for growth. <br />
+            Discover, learn, earn, mentor, connect and make an impact
+          </p>
+        </span>
+
+        <div className="flex flex-col">
+          <div className="flex">
+            <div>
+              <div className="flex">
+                <p
+                  className="font-light leading-tight"
+                  style={{
+                    fontSize: "25px",
+                    color: "#FFFFFF",
+                    textAlign: "left",
+                  }}
+                >
+                  O
+                </p>
+                <div className="p-1"></div>
+                <p
+                  className="font-light leading-tight "
+                  style={{
+                    fontSize: "25px",
+                    color: "#FFFFFF",
+                    textAlign: "left",
+                  }}
+                >
+                  Network and collaborate
+                </p>
+              </div>
+              <div className="p-1"></div>
+              <p
+                className="font-light leading-tight "
+                style={{
+                  fontSize: "15px",
+                  color: "#FFFFFF",
+                  textAlign: "left",
+                }}
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />
+                Integer tempor sodales nibh, <br /> sit amet posuere neque
+                dictum sed. Proin <br />
+                vestibulum blandit aliquet.
+              </p>
+            </div>
+
+            <div style={{ padding: "15px" }}></div>
+
+            <div>
+              <div className="flex">
+                <p
+                  className="font-light leading-tight"
+                  style={{
+                    fontSize: "25px",
+                    color: "#FFFFFF",
+                    textAlign: "left",
+                  }}
+                >
+                  O
+                </p>
+                <div className="p-1"></div>
+                <p
+                  className="font-light leading-tight "
+                  style={{
+                    fontSize: "25px",
+                    color: "#FFFFFF",
+                    textAlign: "left",
+                  }}
+                >
+                  Network and collaborate
+                </p>
+              </div>
+              <div className="p-1"></div>
+              <p
+                className="font-light leading-tight "
+                style={{
+                  fontSize: "15px",
+                  color: "#FFFFFF",
+                  textAlign: "left",
+                }}
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />
+                Integer tempor sodales nibh, <br /> sit amet posuere neque
+                dictum sed. Proin <br />
+                vestibulum blandit aliquet.
+              </p>
+            </div>
+
+            <div style={{ padding: "15px" }}></div>
+
+            <div>
+              <div className="flex">
+                <p
+                  className="font-light leading-tight"
+                  style={{
+                    fontSize: "25px",
+                    color: "#FFFFFF",
+                    textAlign: "left",
+                  }}
+                >
+                  O
+                </p>
+                <div className="p-1"></div>
+                <p
+                  className="font-light leading-tight "
+                  style={{
+                    fontSize: "25px",
+                    color: "#FFFFFF",
+                    textAlign: "left",
+                  }}
+                >
+                  Network and collaborate
+                </p>
+              </div>
+              <div className="p-1"></div>
+              <p
+                className="font-light leading-tight "
+                style={{
+                  fontSize: "15px",
+                  color: "#FFFFFF",
+                  textAlign: "left",
+                }}
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />
+                Integer tempor sodales nibh, <br /> sit amet posuere neque
+                dictum sed. Proin <br />
+                vestibulum blandit aliquet.
+              </p>
+            </div>
+          </div>
+
+          <div className="p-5"></div>
+
+          <div className="flex">
+            <div>
+              <div className="flex">
+                <p
+                  className="font-light leading-tight"
+                  style={{
+                    fontSize: "25px",
+                    color: "#FFFFFF",
+                    textAlign: "left",
+                  }}
+                >
+                  O
+                </p>
+                <div className="p-1"></div>
+                <p
+                  className="font-light leading-tight "
+                  style={{
+                    fontSize: "25px",
+                    color: "#FFFFFF",
+                    textAlign: "left",
+                  }}
+                >
+                  Network and collaborate
+                </p>
+              </div>
+              <div className="p-1"></div>
+              <p
+                className="font-light leading-tight "
+                style={{
+                  fontSize: "15px",
+                  color: "#FFFFFF",
+                  textAlign: "left",
+                }}
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />
+                Integer tempor sodales nibh, <br /> sit amet posuere neque
+                dictum sed. Proin <br />
+                vestibulum blandit aliquet.
+              </p>
+            </div>
+
+            <div style={{ padding: "15px" }}></div>
+
+            <div>
+              <div className="flex">
+                <p
+                  className="font-light leading-tight"
+                  style={{
+                    fontSize: "25px",
+                    color: "#FFFFFF",
+                    textAlign: "left",
+                  }}
+                >
+                  O
+                </p>
+                <div className="p-1"></div>
+                <p
+                  className="font-light leading-tight "
+                  style={{
+                    fontSize: "25px",
+                    color: "#FFFFFF",
+                    textAlign: "left",
+                  }}
+                >
+                  Network and collaborate
+                </p>
+              </div>
+              <div className="p-1"></div>
+              <p
+                className="font-light leading-tight "
+                style={{
+                  fontSize: "15px",
+                  color: "#FFFFFF",
+                  textAlign: "left",
+                }}
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />
+                Integer tempor sodales nibh, <br /> sit amet posuere neque
+                dictum sed. Proin <br />
+                vestibulum blandit aliquet.
+              </p>
+            </div>
+
+            <div style={{ padding: "15px" }}></div>
+
+            <div>
+              <div className="flex">
+                <p
+                  className="font-light leading-tight"
+                  style={{
+                    fontSize: "25px",
+                    color: "#FFFFFF",
+                    textAlign: "left",
+                  }}
+                >
+                  O
+                </p>
+                <div className="p-1"></div>
+                <p
+                  className="font-light leading-tight "
+                  style={{
+                    fontSize: "25px",
+                    color: "#FFFFFF",
+                    textAlign: "left",
+                  }}
+                >
+                  Network and collaborate
+                </p>
+              </div>
+              <div className="p-1"></div>
+              <p
+                className="font-light leading-tight "
+                style={{
+                  fontSize: "15px",
+                  color: "#FFFFFF",
+                  textAlign: "left",
+                }}
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />
+                Integer tempor sodales nibh, <br /> sit amet posuere neque
+                dictum sed. Proin <br />
+                vestibulum blandit aliquet.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="testimonials"
+        className="relative flex flex-col items-center justify-center min-h-50px p-8 pb-8 gap-0 sm:p-20 font-[family-name:var(--font-geist-sans)] w-4/5 mx-auto"
+      >
+        <span
+          className="pointer-events-none whitespace-pre-wrap text-8xl font-semibold leading-none text-white font-normal text-center"
+          style={{ fontSize: "70px", fontWeight: "normal" }}
+        >
+          What <span style={{ color: "#005af0" }}>people</span> say
+        </span>
+
+        <div className="flex justify-center items-center">
+          <p
+            className="font-light leading-tight"
+            style={{
+              fontSize: "25px",
+              color: "#78909C",
+              textAlign: "center",
+            }}
+          >
+            Tenacity is crafting exceptional experiences that drive success
+            stories, <br /> empower businesses, and foster growth across various
+            industries and for <br />individuals.
+          </p>
+        </div>
+
+        {/* <div style={{ paddingTop: "0px" }} className="absolute bottom-0 left-0 right-0"> */}
+          <InfiniteMovingCardsDemo />
+        {/* </div> */}
+      </section>
 
       <div className="absolute inset-0 -z-10">
         <Particles quantity={500} ease={80} color={color} refresh />
