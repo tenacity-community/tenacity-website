@@ -194,21 +194,21 @@ export default function Home() {
           <div style={{ width: "325px" }}>
             <CanvasRevealEffectDemo2
               text="Discover, learn, earn and mentor"
-              ikon="https://media.discordapp.net/attachments/847153213996400660/1282592894217355325/discover.png?ex=66dfeb37&is=66de99b7&hm=92546ced0e04aceb3473ba265a3644ea4e7f7e165927bff1ddaf122d95fa5e0a&=&format=webp&quality=lossless&width=147&height=162"
+              ikon={discover}
             />
           </div>
           <div className="p-5"></div>
           <div style={{ width: "325px" }}>
             <CanvasRevealEffectDemo2
               text="A community with a global presence"
-              ikon="https://media.discordapp.net/attachments/847153213996400660/1282592894435463208/global.png?ex=66dfeb37&is=66de99b7&hm=ca32107c9ab38ff4b1a46a83a9cca7519c9d1e6ab5bbc7c2a80da9a38e5be508&=&format=webp&quality=lossless&width=158&height=158"
+              ikon={global}
             />
           </div>
           <div className="p-5"></div>
           <div style={{ width: "325px" }}>
             <CanvasRevealEffectDemo2
               text="Unlock your potential with Tenacity"
-              ikon="https://media.discordapp.net/attachments/847153213996400660/1282592893978022006/unloccpot.png?ex=66dfeb37&is=66de99b7&hm=81258f40a8f96586c5619d436727536c075fcd5c10f96c202c19dedfeac36113&=&format=webp&quality=lossless&width=130&height=160"
+              ikon={unloccpot}
             />
           </div>
         </div>
