@@ -18,6 +18,13 @@ import { Card, CardHeader } from "@/components/ui/card";
 import CanvasRevealEffectDemo2 from "./StaticCanvasRevealSeparate";
 import ShineBorder from "@/components/magicui/shine-border";
 import InfiniteMovingCardsDemo from "./testimonials";
+
+import discover from "./../public/discover.svg"
+import global from "./../public/global.svg"
+import unloccpot from "./../public/unloccpot.svg"
+import TenacityLearn from "./../public/TenacityLearn.png"
+import Image from "next/image";
+
 export default function Home() {
   const { theme } = useTheme();
   const [color, setColor] = useState("#ffffff");
@@ -140,8 +147,8 @@ export default function Home() {
           <div>
             <Card>
               <CardHeader style={{ padding: "0px" }}>
-                <img
-                  src="https://cdn.discordapp.com/attachments/847153213996400660/1282276740521267240/image.png?ex=66ee96c6&is=66ed4546&hm=d83bff8716a0c800d86281dc80606d7dc340d473de378b7835aecd3d61d9fea1&"
+                <Image
+                  src={TenacityLearn}
                   alt=""
                 />
               </CardHeader>
