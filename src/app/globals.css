@@ -71,3 +71,20 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Ensure html and body take up the full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure all elements use border-box sizing */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Add any other global styles here */
+
+/* @media (max-width:1231px){} */

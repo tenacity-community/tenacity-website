@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${spacegrotesk.className}`}>
+      <body className={`${spacegrotesk.className}`} >
         <ThemeProvider attribute="class" defaultTheme="dark">
           {children}
         </ThemeProvider>

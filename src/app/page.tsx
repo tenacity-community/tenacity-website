@@ -10,20 +10,18 @@ import { Button } from "@/components/ui/button";
 import LogoCarousel from "@/components/ui/logocarousel";
 import React from "react";
 import { Card, CardHeader } from "@/components/ui/card";
-// import { AnimatePresence, motion } from "framer-motion";
-// import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
-// import favicon from "../app/favicon.ico"
-// import { Avatar } from "@/components/ui/avatar";
-// import CanvasRevealEffectDemo3 from "./DynamicCanvasRevealSeparate";
 import CanvasRevealEffectDemo2 from "./StaticCanvasRevealSeparate";
 import ShineBorder from "@/components/magicui/shine-border";
 import InfiniteMovingCardsDemo from "./testimonials";
 
-import discover from "./../public/discover.svg"
-import global from "./../public/global.svg"
-import unloccpot from "./../public/unloccpot.svg"
-import TenacityLearn from "./../public/TenacityLearn.png"
+import discover from "./../public/discover.svg";
+import global from "./../public/global.svg";
+import unloccpot from "./../public/unloccpot.svg";
+import TenacityLearn from "./../public/TenacityLearn.png";
 import Image from "next/image";
+import { useMediaQuery } from "react-responsive";
+import MediaQuery from "react-responsive";
+// import { DesktopNav, TabletNav, MobileNav } from './components';
 
 export default function Home() {
   const { theme } = useTheme();
@@ -35,8 +33,8 @@ export default function Home() {
 
   return (
     <>
-      <section className="relative grid grid-rows-[1fr_20px_1fr] items-center justify-items-center min-h-50px p-8 pb-16 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] w-4/5 mx-auto">
-        <div className="pb-1" style={{ padding: "55px" }}>
+      <section className="responsive-section">
+        <div className="container " style={{ padding: "55px" }}>
           <AnimatedGradientText>
             🎉 <hr className="mx-2 h-4 w-[1px] shrink-0 bg-gray-300" />{" "}
             <span
@@ -51,14 +49,32 @@ export default function Home() {
         </div>
         <span
           className="pointer-events-none whitespace-pre-wrap text-8xl font-semibold leading-none text-white font-normal text-center"
-          style={{ fontSize: "70px", fontWeight: "normal" }}
+          style={{
+            fontSize: "70px",
+            fontWeight: "normal",
+            textAlign: "center",
+          }}
         >
-          Turning <span style={{ color: "#005af0" }}>Passion</span> <br></br>{" "}
-          Into <span style={{ color: "#005af0" }}>Obsession</span>
+          Turning{" "}
+          <span
+            className="pointer-events-none whitespace-pre-wrap leading-none text-white font-normal text-center"
+            style={{ color: "#005af0", textAlign: "center" }}
+          >
+            Passion
+          </span>
+          <br />
+          Into
+          <span
+            className="pointer-events-none whitespace-pre-wrap leading-none text-white font-normal text-center"
+            style={{ color: "#005af0", textAlign: "center" }}
+          >
+            {" "}
+            Obsession
+          </span>
         </span>
 
         <div className="flex flex-col justify-center items-center">
-          <div className="min-w-[500px] pb-5" style={{ width: "700px" }}>
+          <div className="min-w-full pb-5 flex justify-center items-center">
             <p
               className="font-light leading-tight"
               style={{
@@ -67,7 +83,8 @@ export default function Home() {
                 textAlign: "center",
               }}
             >
-              Tenacity is a student driven community that{" "}
+              Tenacity is a student driven community that <br /> provides an
+              inclusive and collaborative space to all
             </p>
             <p
               className="font-light leading-tight"
@@ -76,9 +93,7 @@ export default function Home() {
                 color: "#78909C",
                 textAlign: "center",
               }}
-            >
-              provides an inclusive and collaborative space to all
-            </p>
+            ></p>
           </div>
           <Button className="items-center justify-center">
             Join the Community
@@ -130,27 +145,29 @@ export default function Home() {
         <div className="" style={{ padding: "" }}></div>
 
         <div
-          className="flex flex-col items-center justify-center min-h-screen"
-          style={{ paddingTop: "-50px" }}
+          className="flex flex-col items-center justify-center min-h-screen w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl"
+          style={{ paddingTop: "-40px" }}
         >
           <div>
             <span
               className="pointer-events-none whitespace-pre-wrap text-8xl font-semibold leading-none text-white font-normal text-center"
               style={{ fontSize: "70px", fontWeight: "normal" }}
             >
-              Introducing{" "}
-              <span style={{ color: "#005af0" }}>Tenacity Learn</span>
+              Introducing
+              <span
+                className="pointer-events-none whitespace-pre-wrap leading-none text-white font-normal text-center"
+                style={{ color: "#005af0" }}
+              >
+                Tenacity Learn
+              </span>
             </span>
           </div>
           <div className="p-3"></div>
 
-          <div>
+          <div className="w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl">
             <Card>
               <CardHeader style={{ padding: "0px" }}>
-                <Image
-                  src={TenacityLearn}
-                  alt=""
-                />
+                <Image src={TenacityLearn} alt="" layout="responsive" />
               </CardHeader>
             </Card>
           </div>
@@ -161,55 +178,35 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative grid grid-rows-[1fr_20px_1fr] items-center justify-items-center min-h-50px p-8 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] w-4/5 mx-auto">
-        <div id="reee" className="flex" style={{ paddingBottom: "200px" }}>
-          <span
-            className="pointer-events-none whitespace-pre-wrap text-8xl font-semibold leading-none text-white font-normal text-left"
-            style={{ fontSize: "75px", fontWeight: "normal" }}
-          >
-            <span style={{ color: "#005af0" }}>Everything</span> <br></br>
-            you need
-          </span>
-          <div className="p-20"></div>
-          <div className="p-5"></div>
-          <span>
-            <div className="pb-5"></div>
-
-            <p
-              className="font-light leading-tight "
-              style={{
-                fontSize: "20px",
-                color: "#78909C",
-                textAlign: "left",
-              }}
+      <section className="responsive-section">
+        <div className="container ">
+          <div id="reee" className="flex flex-wrap pb-20">
+            <span
+              className="pointer-events-none whitespace-pre-wrap text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold leading-none text-white font-normal text-left"
+              style={{ fontSize: "75px", fontWeight: "normal" }}
             >
-              At Tenacity, we create an enriching and
-              <br /> valuable experience for all members. We are <br />
-              committed to helping our members succeed.
-            </p>
-          </span>
-        </div>
+              <span style={{ color: "#005af0" }}>Everything</span> <br />
+              you need
+            </span>
+            <div className="p-5 sm:p-4 md:p-3 lg:p-20 xl:p-20"></div>
+            <div className="p-5"></div>
+            <span>
+              <div className="pb-5"></div>
 
-        <div id="cards" className="flex">
-          <div style={{ width: "325px" }}>
-            <CanvasRevealEffectDemo2
-              text="Discover, learn, earn and mentor"
-              ikon={discover}
-            />
-          </div>
-          <div className="p-5"></div>
-          <div style={{ width: "325px" }}>
-            <CanvasRevealEffectDemo2
-              text="A community with a global presence"
-              ikon={global}
-            />
-          </div>
-          <div className="p-5"></div>
-          <div style={{ width: "325px" }}>
-            <CanvasRevealEffectDemo2
-              text="Unlock your potential with Tenacity"
-              ikon={unloccpot}
-            />
+              <div>
+                <p
+                  className="font-light leading-tight text-left sm:text-center md:text-center"
+                  style={{
+                    fontSize: "20px",
+                    color: "#78909C",
+                  }}
+                >
+                  At Tenacity, we create an enriching and
+                  <br /> valuable experience for all members. We are <br />
+                  committed to helping our members succeed.
+                </p>
+              </div>
+            </span>
           </div>
         </div>
       </section>
@@ -516,12 +513,13 @@ export default function Home() {
           >
             Tenacity is crafting exceptional experiences that drive success
             stories, <br /> empower businesses, and foster growth across various
-            industries and for <br />individuals.
+            industries and for <br />
+            individuals.
           </p>
         </div>
 
         {/* <div style={{ paddingTop: "0px" }} className="absolute bottom-0 left-0 right-0"> */}
-          <InfiniteMovingCardsDemo />
+        <InfiniteMovingCardsDemo />
         {/* </div> */}
       </section>
 
